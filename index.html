@@ -503,8 +503,9 @@
         <a href="tel:3523713600">(352) 371-3600</a>, press 0
       </div>
       <div class="link-copy-row">
-        <a id="emailBtn" href="#" class="copy-link-btn">Send Reservation Request</a>
+        <a id="emailBtn" href="#" class="copy-link-btn">Copy Email Template</a>
       </div>
+      <div id="emailCopyConfirm" class="copy-confirm">Copied!</div>
       <div class="tip"><strong>Want to streamline this?</strong> Ask Shane about setting up direct billing so your company gets invoiced automatically with no extra steps per reservation.</div>
     </div>
 
@@ -584,11 +585,26 @@
     'Any special requests: \n\n' +
     'Thank you!'
   );
-  var mailtoUrl = 'mailto:cmccoy@hiltongainesvilleuf.com?subject=' + mailSubject + '&body=' + mailBody;
+  var emailTemplate =
+    'To: cmccoy@hiltongainesvilleuf.com\n' +
+    'Subject: ' + subjectLine + '\n\n' +
+    'Hi Crystal,\n\n' +
+    'We\'d like to book a room under our corporate rate.\n\n' +
+    'Guest Name: \n' +
+    'Check-in Date: \n' +
+    'Check-out Date: \n' +
+    'Any special requests: \n\n' +
+    'Thank you!';
 
   emailBtn.addEventListener('click', function(e) {
     e.preventDefault();
-    window.location.href = mailtoUrl;
+    navigator.clipboard.writeText(emailTemplate).then(function() {
+      var confirm = document.getElementById('emailCopyConfirm');
+      confirm.classList.remove('show');
+      void confirm.offsetWidth;
+      confirm.classList.add('show');
+      setTimeout(function() { confirm.classList.remove('show'); }, 1600);
+    });
   });
 
   guestLink.addEventListener('click', function(e) {
