@@ -40,18 +40,6 @@
     filter: brightness(0) invert(1);
   }
 
-  .hero-eyebrow {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.55);
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 5px 14px;
-    border-radius: 3px;
-    margin-bottom: 20px;
-  }
 
   .hero h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -127,6 +115,7 @@
     border: 1px solid var(--rule);
     border-top: 3px solid var(--navy);
     padding: 28px 24px;
+    text-align: center;
   }
 
   .option-card .option-icon {
@@ -191,6 +180,7 @@
     color: var(--text-secondary);
     line-height: 1.5;
     border-left: 3px solid var(--navy);
+    text-align: left;
   }
 
   .option-card .tip strong {
@@ -478,13 +468,12 @@
 
 <section class="hero">
   <img class="logo-mark" src="https://www.lgbtqguide.net/FL/BusAlpha/H/Hilton-UF-Conference-Center.png" alt="Hilton University of Florida Conference Center Gainesville">
-  <div class="hero-eyebrow">Corporate Partner</div>
-  <h1>Your Booking Guide at <span id="hotelName">Hilton UF Conference Center</span></h1>
+  <h1><span id="heroTitle">Your Booking Guide</span> at Hilton UF Conference Center</h1>
   <p class="subtitle">Everything your team needs to book rooms at your negotiated rate.</p>
 </section>
 
 <section class="callout">
-  <p>Welcome to the <span id="companyCallout">partner</span> family!</p>
+  <p>Welcome to the Hilton UF partner family!</p>
   <span class="hint">&#8595; Two easy ways to book below</span>
 </section>
 
@@ -493,7 +482,7 @@
   <div class="option-cards">
 
     <div class="option-card">
-      <div class="option-icon">&#128100;</div>
+      <div class="option-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="6" r="3.5" stroke="#002855" stroke-width="1.8"/><path d="M3 17.5c0-3.5 3.1-6 7-6s7 2.5 7 6" stroke="#002855" stroke-width="1.8" stroke-linecap="round"/></svg></div>
       <h3>Guest Books & Pays</h3>
       <div class="option-for">Best for individual travelers</div>
       <p>Send your traveler the booking link below. The negotiated discount is applied automatically. The guest reserves with their own card and pays at check-in.</p>
@@ -504,7 +493,7 @@
     </div>
 
     <div class="option-card">
-      <div class="option-icon">&#127970;</div>
+      <div class="option-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="14" height="12" rx="1.5" stroke="#002855" stroke-width="1.8"/><path d="M7 5V3.5A1.5 1.5 0 018.5 2h3A1.5 1.5 0 0113 3.5V5" stroke="#002855" stroke-width="1.8"/><path d="M3 10h14" stroke="#002855" stroke-width="1.8"/></svg></div>
       <h3>Company Books & Pays</h3>
       <div class="option-for">Best for company-arranged travel</div>
       <p>Email or call us with the company name, guest names, and check-in/check-out dates. Companies on direct billing get invoiced automatically. If you're not on direct billing, we'll send a secure payment link for each reservation.</p>
@@ -563,8 +552,8 @@
   var code = params.get('code');
 
   if (company) {
-    document.getElementById('companyCallout').textContent = company;
-    document.title = company + ' | Corporate Partner Booking Guide';
+    document.getElementById('heroTitle').textContent = company + "'s Booking Guide";
+    document.title = company + ' | Partner Booking Guide';
   }
 
   if (code) {
