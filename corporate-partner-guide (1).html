@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corporate Partner Booking Guide</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAASFBMVEVHcEwATJsATJsATJsATJsATJsATJsATJsATJsATJsATJsATJsATJsATJsATJsATJsATJsATJsATJsATJsATJsATJsATJsATJuuL1IuAAAAF3RSTlMAPhL79nRHVQMzm4UoCarc62W3z8AdkQ3bREYAAAFTSURBVDjL1VNXluQgDBRR5GTC/W+6wqanvW9OMPVhjCikUgDgT4Hb6l1KzqPlv0+N9b0sghBClu5Z/P88zLJETr6i1hrVbFfCF8XUvLLTw3wtA51jn11UsvhAVk6IEPdiwDBXjxMlut2rvQgV6l62gXt/M3RJj2otSKQCT195u4/JU1Te28lKy5ugfghgMwJgtkeLFlIK/yZAuga4eQpRlVKzd9fkl1BFha7333BND5flmtjLJT8ELRK0sAvVKdARiSuncghMXuDClrvqj0gUy/VDwHWBIo22lPAmtE8V52pgcYfK/E1ITj8tyrQ3yMlDHhSwSCkV8YRvtwczF6UJg5nYBF3hjDDAdjeeiahS4p1ioMunnDxodRptFPl7GkwtxDxvc9yNfOI7ket3AMCm9JqiaH0uuwAvRD19ZYHA0Ld8eWt+zWVAmtrWe3OK8T/14P4BSGQSvDDcCgsAAAAASUVORK5CYII=">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #002855;
+    --navy-hover: #001A3A;
+    --white: #FFFFFF;
+    --ice: #F2F5F8;
+    --slate: #7A8DA0;
+    --rule: #DDE3EA;
+    --text: #1E2A36;
+    --text-secondary: #4A5B6E;
+  }
+
+  body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background: var(--navy);
+    padding: 52px 24px 48px;
+    text-align: center;
+  }
+
+  .logo-mark {
+    margin: 0 auto 36px;
+    display: block;
+    height: 100px;
+    width: auto;
+    filter: brightness(0) invert(1);
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 5px 14px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.3;
+    color: var(--white);
+    max-width: 420px;
+    margin: 0 auto 14px;
+    text-wrap: balance;
+  }
+
+  .hero .subtitle {
+    font-size: 15px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.5;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .callout {
+    background: var(--ice);
+    padding: 18px 24px;
+    text-align: center;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .callout p {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--navy);
+  }
+
+  .callout .hint {
+    display: block;
+    font-size: 13px;
+    color: var(--slate);
+    margin-top: 3px;
+  }
+
+  .rule {
+    width: 36px;
+    height: 2px;
+    background: var(--rule);
+    margin: 0 auto;
+  }
+
+  /* Booking Options Section */
+  .options {
+    padding: 44px 24px 40px;
+  }
+
+  .options-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .option-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .option-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--navy);
+    padding: 28px 24px;
+  }
+
+  .option-card .option-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--ice);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 18px;
+  }
+
+  .option-card h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .option-card .option-for {
+    font-size: 13px;
+    color: var(--slate);
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+
+  .option-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .option-card .contact-line {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    font-size: 14px;
+    color: var(--text);
+  }
+
+  .option-card .contact-line a {
+    color: var(--navy);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .option-card .contact-line .or {
+    display: block;
+    font-size: 13px;
+    color: var(--slate);
+    margin: 6px 0;
+  }
+
+  .option-card .tip {
+    margin-top: 14px;
+    padding: 12px 14px;
+    background: var(--ice);
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    border-left: 3px solid var(--navy);
+  }
+
+  .option-card .tip strong {
+    color: var(--navy);
+  }
+
+  /* Copy Link Button */
+  .link-copy-row {
+    margin-top: 16px;
+  }
+
+  .copy-link-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--navy);
+    color: var(--white);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    user-select: none;
+  }
+
+  .copy-link-btn:hover { background: var(--navy-hover); }
+
+  .copy-confirm {
+    display: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: #2E7D32;
+    margin-top: 8px;
+  }
+
+  .copy-confirm.show {
+    display: block;
+    animation: fadeInOut 1.6s ease;
+  }
+
+  @keyframes fadeInOut {
+    0% { opacity: 0; }
+    15% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  /* Book Button */
+  .book-btn {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    margin: 32px auto 0;
+    padding: 16px 28px;
+    background: var(--navy);
+    color: var(--white);
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+
+  .book-btn:hover { background: var(--navy-hover); }
+
+  .book-btn-secondary {
+    background: var(--white);
+    color: var(--navy);
+    border: 2px solid var(--navy);
+  }
+
+  .book-btn-secondary:hover {
+    background: var(--ice);
+  }
+
+  .book-note {
+    text-align: center;
+    font-size: 13px;
+    color: var(--slate);
+    margin-top: 10px;
+  }
+
+  /* App Booking Steps */
+  .honors {
+    padding: 44px 24px 40px;
+    text-align: center;
+  }
+
+  .honors h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .honors .lead {
+    font-size: 14px;
+    color: var(--slate);
+    line-height: 1.5;
+    max-width: 340px;
+    margin: 0 auto 32px;
+  }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .step {
+    text-align: center;
+  }
+
+  .step-num {
+    width: 34px;
+    height: 34px;
+    background: var(--navy);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .step h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .step p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .code-block {
+    background: var(--ice);
+    margin: 0 24px 44px;
+    padding: 22px;
+    text-align: center;
+    border: 1px solid var(--rule);
+  }
+
+  .code-block .lbl {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 6px;
+  }
+
+  .code-block .val {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--navy);
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+  }
+
+  .code-block .note {
+    font-size: 13px;
+    color: var(--slate);
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 28px 24px 36px;
+    border-top: 1px solid var(--rule);
+  }
+
+  footer .fname {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 3px;
+  }
+
+  footer .faddr {
+    font-size: 13px;
+    color: var(--slate);
+    margin-bottom: 18px;
+  }
+
+  .footer-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .footer-contact {
+    text-align: center;
+  }
+
+  .footer-contact .fc-role {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 4px;
+  }
+
+  .footer-contact .fc-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .footer-contact .fc-detail {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 2px;
+  }
+
+  .footer-contact .fc-detail a {
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+
+  @media (min-width: 640px) {
+    .hero { padding: 64px 32px 56px; }
+    .hero h1 { font-size: 38px; max-width: 520px; }
+    .hero .subtitle { font-size: 17px; max-width: 460px; }
+    .logo-mark { height: 120px; margin-bottom: 44px; }
+    .callout p { font-size: 17px; }
+    .options { padding: 56px 32px 52px; }
+    .options-label { font-size: 12px; margin-bottom: 28px; }
+    .option-cards { gap: 24px; }
+    .option-card { padding: 32px 28px; }
+    .option-card h3 { font-size: 22px; }
+    .option-card p { font-size: 15px; }
+    .book-btn { max-width: 420px; padding: 18px 36px; font-size: 17px; }
+    .honors { padding: 56px 32px 52px; }
+    .honors h2 { font-size: 28px; }
+    .honors .lead { font-size: 16px; max-width: 440px; }
+    .steps { max-width: 440px; }
+    .step h3 { font-size: 16px; }
+    .step p { font-size: 15px; }
+    .code-block { max-width: 480px; margin-left: auto; margin-right: auto; padding: 28px; }
+    .code-block .val { font-size: 28px; letter-spacing: 6px; }
+    .footer-contacts { flex-direction: row; justify-content: center; gap: 40px; max-width: 520px; }
+  }
+
+  @media (min-width: 900px) {
+    .hero h1 { font-size: 44px; max-width: 600px; }
+    .hero .subtitle { font-size: 18px; }
+    .option-cards { flex-direction: row; max-width: 680px; }
+    .option-card { flex: 1; }
+    .steps { max-width: 500px; }
+    .code-block { max-width: 520px; }
+  }
+
+  @media (max-width: 400px) {
+    .hero { padding: 40px 20px 36px; }
+    .hero h1 { font-size: 25px; }
+    .options { padding: 36px 20px 32px; }
+    .honors { padding: 36px 20px 32px; }
+    .code-block { margin-left: 20px; margin-right: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <img class="logo-mark" src="https://www.lgbtqguide.net/FL/BusAlpha/H/Hilton-UF-Conference-Center.png" alt="Hilton University of Florida Conference Center Gainesville">
+  <div class="hero-eyebrow">Corporate Partner</div>
+  <h1>Your Booking Guide at <span id="hotelName">Hilton UF Conference Center</span></h1>
+  <p class="subtitle">Everything your team needs to book rooms at your negotiated rate.</p>
+</section>
+
+<section class="callout">
+  <p>Welcome to the <span id="companyCallout">partner</span> family!</p>
+  <span class="hint">&#8595; Two easy ways to book below</span>
+</section>
+
+<section class="options">
+  <div class="options-label">How to Book</div>
+  <div class="option-cards">
+
+    <div class="option-card">
+      <div class="option-icon">&#128100;</div>
+      <h3>Guest Books & Pays</h3>
+      <div class="option-for">Best for individual travelers</div>
+      <p>Send your traveler the booking link below. The negotiated discount is applied automatically. The guest reserves with their own card and pays at check-in.</p>
+      <div class="link-copy-row">
+        <a id="guestLink" href="#" class="copy-link-btn" target="_blank" rel="noopener">Copy Booking Link</a>
+      </div>
+      <div id="copyConfirm" class="copy-confirm">Copied!</div>
+    </div>
+
+    <div class="option-card">
+      <div class="option-icon">&#127970;</div>
+      <h3>Company Books & Pays</h3>
+      <div class="option-for">Best for company-arranged travel</div>
+      <p>Email or call us with the company name, guest names, and check-in/check-out dates. Companies on direct billing get invoiced automatically. If you're not on direct billing, we'll send a secure payment link for each reservation.</p>
+      <div class="contact-line">
+        <a href="mailto:cmccoy@hiltongainesvilleuf.com">cmccoy@hiltongainesvilleuf.com</a>
+        <span class="or">or</span>
+        <a href="tel:3523713600">(352) 371-3600</a>, press 0
+      </div>
+      <div class="link-copy-row">
+        <a id="emailBtn" href="#" class="copy-link-btn">Send Reservation Request</a>
+      </div>
+      <div class="tip"><strong>Want to streamline this?</strong> Ask Shane about setting up direct billing so your company gets invoiced automatically with no extra steps per reservation.</div>
+    </div>
+
+  </div>
+
+  <a id="bookBtn" href="#" class="book-btn book-btn-secondary" target="_blank" rel="noopener">View Current Rates on Hilton.com</a>
+  <div class="book-note">See what's available and what the partner rate looks like for each night</div>
+</section>
+
+<div class="rule"></div>
+
+
+<div class="code-block">
+  <div class="lbl">Your Corporate Code</div>
+  <div class="val" id="codeDisplay">0000000</div>
+  <div class="note">Enter under "Special Rates" &#8594; "Corporate Account Number" when booking on Hilton.com or the Hilton Honors app</div>
+</div>
+
+<footer>
+  <div class="fname">Hilton University of Florida Conference Center</div>
+  <div class="faddr">1714 SW 34th Street, Gainesville, FL 32607</div>
+  <div class="footer-contacts">
+    <div class="footer-contact">
+      <div class="fc-role">Your Dedicated Contact</div>
+      <div class="fc-name">Shane Clougherty</div>
+      <div class="fc-detail">Business Travel & Corporate Sales</div>
+      <div class="fc-detail"><a href="mailto:srclougherty@hiltongainesvilleuf.com">srclougherty@hiltongainesvilleuf.com</a></div>
+      <div class="fc-detail"><a href="tel:7542528653">(754) 252-8653</a></div>
+    </div>
+    <div class="footer-contact">
+      <div class="fc-role">Reservations</div>
+      <div class="fc-name">Crystal McCoy</div>
+      <div class="fc-detail">Rooms Controller</div>
+      <div class="fc-detail"><a href="mailto:cmccoy@hiltongainesvilleuf.com">cmccoy@hiltongainesvilleuf.com</a></div>
+      <div class="fc-detail"><a href="tel:3523713600">(352) 371-3600</a>, press 0</div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  // URL params: ?company=Allen+Law&code=1234567&link=https://hilton.com/...
+  var params = new URLSearchParams(window.location.search);
+  var company = params.get('company');
+  var code = params.get('code');
+  var link = params.get('link');
+
+  if (company) {
+    document.getElementById('companyCallout').textContent = company;
+    document.title = company + ' | Corporate Partner Booking Guide';
+  }
+
+  if (code) {
+    document.getElementById('codeDisplay').textContent = code;
+  }
+
+  var bookingLink = link || 'https://www.hilton.com/en/book/reservation/flexibledates/?ctyhocn=GVNCCHF&flexibleDate=true&room1NumAdults=1';
+
+  var bookBtn = document.getElementById('bookBtn');
+  bookBtn.href = bookingLink;
+
+  // Guest booking link - copy to clipboard
+  var guestLink = document.getElementById('guestLink');
+  guestLink.href = bookingLink;
+
+  // Company books - mailto prefilled email
+  var emailBtn = document.getElementById('emailBtn');
+  var mailSubject = encodeURIComponent('Room Reservation Request');
+  var mailBody = encodeURIComponent(
+    'Hi Crystal,\n\n' +
+    'We\'d like to book a room under our corporate rate.\n\n' +
+    'Guest Name: \n' +
+    'Check-in Date: \n' +
+    'Check-out Date: \n' +
+    'Any special requests: \n\n' +
+    'Thank you!'
+  );
+  emailBtn.href = 'mailto:cmccoy@hiltongainesvilleuf.com?subject=' + mailSubject + '&body=' + mailBody;
+
+  guestLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    navigator.clipboard.writeText(bookingLink).then(function() {
+      var confirm = document.getElementById('copyConfirm');
+      confirm.classList.remove('show');
+      void confirm.offsetWidth; // reset animation
+      confirm.classList.add('show');
+      setTimeout(function() { confirm.classList.remove('show'); }, 1600);
+    });
+  });
+</script>
+
+</body>
+</html>
