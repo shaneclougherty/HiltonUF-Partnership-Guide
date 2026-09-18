@@ -573,7 +573,7 @@
 
   // Company books - mailto prefilled email with company name
   var emailBtn = document.getElementById('emailBtn');
-  var subjectLine = company ? 'Room Reservation Request — ' + company : 'Room Reservation Request';
+  var subjectLine = company ? 'Room Reservation Request - ' + company : 'Room Reservation Request';
   var mailSubject = encodeURIComponent(subjectLine);
   var mailBody = encodeURIComponent(
     'Hi Crystal,\n\n' +
@@ -584,7 +584,12 @@
     'Any special requests: \n\n' +
     'Thank you!'
   );
-  emailBtn.href = 'mailto:cmccoy@hiltongainesvilleuf.com?subject=' + mailSubject + '&body=' + mailBody;
+  var mailtoUrl = 'mailto:cmccoy@hiltongainesvilleuf.com?subject=' + mailSubject + '&body=' + mailBody;
+
+  emailBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.location.href = mailtoUrl;
+  });
 
   guestLink.addEventListener('click', function(e) {
     e.preventDefault();
