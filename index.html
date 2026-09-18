@@ -460,8 +460,7 @@
   @media (min-width: 900px) {
     .hero h1 { font-size: 44px; max-width: 600px; }
     .hero .subtitle { font-size: 18px; }
-    .option-cards { flex-direction: row; max-width: 680px; }
-    .option-card { flex: 1; }
+    .option-cards { max-width: 580px; }
     .steps { max-width: 500px; }
     .code-block { max-width: 520px; }
   }
@@ -558,11 +557,10 @@
 
 
 <script>
-  // URL params: ?company=Allen+Law&code=1234567&link=https://hilton.com/...
+  // URL params: ?company=Allen+Law&code=1234567
   var params = new URLSearchParams(window.location.search);
   var company = params.get('company');
   var code = params.get('code');
-  var link = params.get('link');
 
   if (company) {
     document.getElementById('companyCallout').textContent = company;
@@ -573,7 +571,9 @@
     document.getElementById('codeDisplay').textContent = code;
   }
 
-  var bookingLink = link || 'https://www.hilton.com/en/book/reservation/flexibledates/?ctyhocn=GVNCCHF&flexibleDate=true&room1NumAdults=1';
+  // Build booking link from code param
+  var baseUrl = 'https://www.hilton.com/en/book/reservation/flexibledates/?ctyhocn=GVNCCHF&flexibleDate=true&room1NumAdults=1';
+  var bookingLink = code ? baseUrl + '&corporateCode=' + code : baseUrl;
 
   var bookBtn = document.getElementById('bookBtn');
   bookBtn.href = bookingLink;
@@ -582,9 +582,10 @@
   var guestLink = document.getElementById('guestLink');
   guestLink.href = bookingLink;
 
-  // Company books - mailto prefilled email
+  // Company books - mailto prefilled email with company name
   var emailBtn = document.getElementById('emailBtn');
-  var mailSubject = encodeURIComponent('Room Reservation Request');
+  var subjectLine = company ? 'Room Reservation Request — ' + company : 'Room Reservation Request';
+  var mailSubject = encodeURIComponent(subjectLine);
   var mailBody = encodeURIComponent(
     'Hi Crystal,\n\n' +
     'We\'d like to book a room under our corporate rate.\n\n' +
