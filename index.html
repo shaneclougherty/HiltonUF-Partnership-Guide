@@ -609,7 +609,7 @@
 
   guestLink.addEventListener('click', function(e) {
     e.preventDefault();
-    var linkHtml = '<a href="' + bookingLink + '">Book Your Room at Hilton UF</a>';
+    var linkHtml = '<a href="' + bookingLink + '">Book Your Stay | Hilton UF Partner Rate</a>';
     var htmlBlob = new Blob([linkHtml], { type: 'text/html' });
     var textBlob = new Blob([bookingLink], { type: 'text/plain' });
     navigator.clipboard.write([
