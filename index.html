@@ -609,10 +609,15 @@
 
   guestLink.addEventListener('click', function(e) {
     e.preventDefault();
-    navigator.clipboard.writeText(bookingLink).then(function() {
+    var linkHtml = '<a href="' + bookingLink + '">Book Your Room at Hilton UF</a>';
+    var htmlBlob = new Blob([linkHtml], { type: 'text/html' });
+    var textBlob = new Blob([bookingLink], { type: 'text/plain' });
+    navigator.clipboard.write([
+      new ClipboardItem({ 'text/html': htmlBlob, 'text/plain': textBlob })
+    ]).then(function() {
       var confirm = document.getElementById('copyConfirm');
       confirm.classList.remove('show');
-      void confirm.offsetWidth; // reset animation
+      void confirm.offsetWidth;
       confirm.classList.add('show');
       setTimeout(function() { confirm.classList.remove('show'); }, 1600);
     });
