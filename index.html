@@ -494,9 +494,9 @@
 
     <div class="option-card">
       <div class="option-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="14" height="12" rx="1.5" stroke="#002855" stroke-width="1.8"/><path d="M7 5V3.5A1.5 1.5 0 018.5 2h3A1.5 1.5 0 0113 3.5V5" stroke="#002855" stroke-width="1.8"/><path d="M3 10h14" stroke="#002855" stroke-width="1.8"/></svg></div>
-      <h3>Company Books & Pays</h3>
-      <div class="option-for">Best for company-arranged travel</div>
-      <p>Email or call us with the company name, guest names, and check-in/check-out dates. Companies on direct billing get invoiced automatically. If you're not on direct billing, we'll send a secure payment link for each reservation.</p>
+      <h3>Your Organization Books & Pays</h3>
+      <div class="option-for">Best for arranged travel</div>
+      <p>Email or call us with your organization name, guest names, and check-in/check-out dates. Organizations on direct billing get invoiced automatically. If you're not on direct billing, we'll send a secure payment link for each reservation.</p>
       <div class="contact-line">
         <a href="mailto:cmccoy@hiltongainesvilleuf.com">cmccoy@hiltongainesvilleuf.com</a>
         <span class="or">or</span>
@@ -506,7 +506,7 @@
         <a id="emailBtn" href="#" class="copy-link-btn">Copy Email Template</a>
       </div>
       <div id="emailCopyConfirm" class="copy-confirm">Copied!</div>
-      <div class="tip"><strong>Want to streamline this?</strong> Ask Shane about setting up direct billing so your company gets invoiced automatically with no extra steps per reservation.</div>
+      <div class="tip"><strong>Want to streamline this?</strong> Ask Shane about setting up direct billing so your organization gets invoiced automatically with no extra steps per reservation.</div>
     </div>
 
   </div>
@@ -572,7 +572,7 @@
   var guestLink = document.getElementById('guestLink');
   guestLink.href = bookingLink;
 
-  // Company books - mailto prefilled email with company name
+  // Organization books - prefilled email template
   var emailBtn = document.getElementById('emailBtn');
   var subjectLine = company ? 'Room Reservation Request - ' + company : 'Room Reservation Request';
   var mailSubject = encodeURIComponent(subjectLine);
