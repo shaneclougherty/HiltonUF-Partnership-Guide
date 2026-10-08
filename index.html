@@ -52,6 +52,20 @@
     text-wrap: balance;
   }
 
+  .hero .org-badge {
+    display: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 12px;
+  }
+
+  .hero .org-badge.show {
+    display: block;
+  }
+
   .hero .subtitle {
     font-size: 15px;
     color: rgba(255,255,255,0.65);
@@ -426,6 +440,7 @@
   @media (min-width: 640px) {
     .hero { padding: 64px 32px 56px; }
     .hero h1 { font-size: 38px; max-width: 520px; }
+    .hero .org-badge { font-size: 14px; letter-spacing: 2px; }
     .hero .subtitle { font-size: 17px; max-width: 460px; }
     .logo-mark { height: 120px; margin-bottom: 44px; }
     .callout p { font-size: 17px; }
@@ -468,7 +483,8 @@
 
 <section class="hero">
   <img class="logo-mark" src="https://www.lgbtqguide.net/FL/BusAlpha/H/Hilton-UF-Conference-Center.png" alt="Hilton University of Florida Conference Center Gainesville">
-  <h1><span id="heroTitle">Your Booking Guide</span> at Hilton UF Conference Center</h1>
+  <div class="org-badge" id="orgBadge"></div>
+  <h1>Partner Booking Guide<br>at Hilton UF Conference Center</h1>
   <p class="subtitle">Everything your team needs to book rooms at your negotiated rate.</p>
 </section>
 
@@ -553,7 +569,9 @@
   var code = params.get('code');
 
   if (company) {
-    document.getElementById('heroTitle').textContent = company + "'s Booking Guide";
+    var badge = document.getElementById('orgBadge');
+    badge.textContent = company;
+    badge.classList.add('show');
     document.title = company + ' | Partner Booking Guide';
   }
 
